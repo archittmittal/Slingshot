@@ -1,0 +1,147 @@
+.operate-page {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.operate-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    gap: 16px;
+    color: var(--text-muted);
+}
+
+.kpi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+/* Chart tooltip */
+.chart-tooltip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 12px;
+}
+
+.ct-label {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.ct-row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+/* Buildings */
+.buildings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.building-row {
+    display: grid;
+    grid-template-columns: 120px 1fr 40px;
+    align-items: center;
+    gap: 10px;
+}
+
+.building-name {
+    font-size: 12px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.building-bar-wrap {
+    height: 8px;
+    background: var(--bg-surface);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.building-bar {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.8s ease;
+}
+
+.building-pct {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: right;
+}
+
+/* Alerts */
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alert-item {
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border-left: 3px solid;
+}
+
+.alert-critical {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: var(--danger);
+}
+
+.alert-warning {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: var(--warning);
+}
+
+.alert-info {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: var(--info);
+}
+
+.alert-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.alert-loc {
+    font-size: 13px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.alert-time {
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+.alert-msg {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.no-alerts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 30px;
+    color: var(--text-muted);
+}
