@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Wand2, Plus, Eye, Rocket, MessageSquare, CheckCircle, ChevronRight, Copy } from 'lucide-react'
 import './CreatePage.css'
 
-const API = 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 function TemplateCard({ tpl, selected, onClick }) {
     return (

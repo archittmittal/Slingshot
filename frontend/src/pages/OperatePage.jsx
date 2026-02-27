@@ -3,7 +3,7 @@ import { LineChart, Line, AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveCont
 import { Zap, Users, Wind, MapPin, AlertTriangle, CheckCircle, Info, RefreshCw } from 'lucide-react'
 import './OperatePage.css'
 
-const API = 'http://localhost:8000'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const BUILDING_COLORS = ['#6366f1', '#10b981', '#f59e0b', '#3b82f6', '#ec4899', '#8b5cf6', '#14b8a6', '#f97316']
 
@@ -47,7 +47,8 @@ export default function OperatePage() {
         fetchMetrics()
 
         // WebSocket for live updates
-        const ws = new WebSocket('ws://localhost:8000/ws/campus')
+        const wsUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace('http', 'ws')
+        const ws = new WebSocket(`${wsUrl}/ws/campus`)
         ws.onmessage = e => {
             const data = JSON.parse(e.data)
             setMetrics(data)
