@@ -1,12 +1,10 @@
 ---
-title: VIDYA OS 2.0 Sovereign AI Backend
-emoji: 🎓
-colorFrom: purple
-colorTo: emerald
+title: Vidya Os Backend
+emoji: 🌍
+colorFrom: blue
+colorTo: indigo
 sdk: docker
-pinned: true
-license: mit
-short_description: Bharat-First Multi-Agent Campus Intelligence API
+pinned: false
 ---
 
 # VIDYA OS 2.0 — Sovereign AI Backend
