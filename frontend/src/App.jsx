@@ -1,47 +1,59 @@
-import { BrowserRouter, Routes, Route, NavLink, Navigate } from 'react-router-dom'
-import { Brain, LayoutDashboard, Wand2, Cpu, Zap, Menu, X } from 'lucide-react'
+import { BrowserRouter, Routes, Route, NavLink, Navigate, useLocation } from 'react-router-dom'
+import { Brain, LayoutDashboard, Wand2, Cpu, Zap, Menu, X, Rocket } from 'lucide-react'
 import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
 import LearnPage from './pages/LearnPage'
 import OperatePage from './pages/OperatePage'
 import CreatePage from './pages/CreatePage'
 import LandingPage from './pages/LandingPage'
+import PageTransition from './components/PageTransition'
 import './App.css'
 
 const navItems = [
-  { to: '/learn', icon: Brain, label: 'LEARN', sub: 'AI Tutor', color: '#6366f1' },
-  { to: '/operate', icon: LayoutDashboard, label: 'OPERATE', sub: 'Campus OS', color: '#10b981' },
-  { to: '/create', icon: Wand2, label: 'CREATE', sub: 'App Builder', color: '#f59e0b' },
+  { to: '/learn', icon: Brain, label: 'LEARN', sub: 'AI Tutor', color: 'var(--primary)' },
+  { to: '/operate', icon: LayoutDashboard, label: 'OPERATE', sub: 'Campus OS', color: 'var(--secondary)' },
+  { to: '/create', icon: Wand2, label: 'CREATE', sub: 'App Builder', color: 'var(--accent)' },
 ]
 
 function Sidebar({ open, setOpen }) {
   return (
     <>
-      {open && <div className="sidebar-overlay" onClick={() => setOpen(false)} />}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="sidebar-overlay"
+            onClick={() => setOpen(false)}
+          />
+        )}
+      </AnimatePresence>
       <aside className={`sidebar ${open ? 'open' : ''}`}>
         {/* Logo */}
         <div className="sidebar-logo">
-          <div className="logo-icon"><Cpu size={22} /></div>
+          <div className="logo-icon"><Cpu size={22} className="text-primary" /></div>
           <div>
             <div className="logo-name">VIDYA OS</div>
-            <div className="logo-sub">AMD Slingshot 2025</div>
+            <div className="logo-sub">2.0 · Agentic Era</div>
           </div>
         </div>
 
         {/* Status */}
         <div className="sidebar-status">
           <div className="pulse-dot" />
-          <span>On-device AI Active</span>
+          <span>Sovereign SLM Active</span>
         </div>
 
         {/* Nav */}
         <nav className="sidebar-nav">
-          <div className="nav-section-label">Pillars</div>
+          <div className="nav-section-label">Intelligence Pillars</div>
           {navItems.map(({ to, icon: Icon, label, sub, color }) => (
             <NavLink key={to} to={to} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
               style={({ isActive }) => isActive ? { '--nav-color': color } : {}}>
               <div className="nav-icon"><Icon size={18} /></div>
               <div>
-                <div className="nav-label">{label}</div>
+                <NavLabel label={label} />
                 <div className="nav-sub">{sub}</div>
               </div>
             </NavLink>
@@ -50,11 +62,11 @@ function Sidebar({ open, setOpen }) {
 
         {/* Hardware Badge */}
         <div className="sidebar-footer">
-          <div className="hw-badge">
-            <Zap size={14} />
+          <div className="hw-badge glass">
+            <Zap size={14} className="text-accent" />
             <div>
-              <div className="hw-title">On-Premise Compute</div>
-              <div className="hw-sub">AMD Radeon + Ryzen AI</div>
+              <div className="hw-title">AMD ROCm Engine</div>
+              <div className="hw-sub">Sovereign Campus Compute</div>
             </div>
           </div>
         </div>
@@ -63,18 +75,40 @@ function Sidebar({ open, setOpen }) {
   )
 }
 
+function NavLabel({ label }) {
+  return <div className="nav-label">{label}</div>
+}
+
 function TopBar({ setOpen }) {
   return (
-    <header className="topbar">
-      <button className="topbar-menu btn btn-ghost" onClick={() => setOpen(o => !o)}>
+    <header className="topbar glass">
+      <button className="topbar-menu" onClick={() => setOpen(o => !o)}>
         <Menu size={20} />
       </button>
       <div className="topbar-title gradient-text">VIDYA OS</div>
       <div className="topbar-right">
-        <span className="badge badge-success">● Live</span>
+        <div className="live-pill">
+          <span className="pulse-dot"></span>
+          <span>BHarat-v1</span>
+        </div>
       </div>
     </header>
   )
+}
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageTransition><LandingPage /></PageTransition>} />
+        <Route path="/learn" element={<PageTransition><LearnPage /></PageTransition>} />
+        <Route path="/operate" element={<PageTransition><OperatePage /></PageTransition>} />
+        <Route path="/create" element={<PageTransition><CreatePage /></PageTransition>} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </AnimatePresence>
+  );
 }
 
 export default function App() {
@@ -86,13 +120,7 @@ export default function App() {
         <div className="app-main">
           <TopBar setOpen={setSidebarOpen} />
           <main className="app-content">
-            <Routes>
-              <Route path="/" element={<LandingPage />} />
-              <Route path="/learn" element={<LearnPage />} />
-              <Route path="/operate" element={<OperatePage />} />
-              <Route path="/create" element={<CreatePage />} />
-              <Route path="*" element={<Navigate to="/" />} />
-            </Routes>
+            <AnimatedRoutes />
           </main>
         </div>
       </div>

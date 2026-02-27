@@ -1,99 +1,93 @@
-<div align="center">
+# 🎓 VIDYA OS 2.0
+### Sovereign Multi-Agent Campus Intelligence Platform
 
-# 🎓 VIDYA OS
-### Sovereign On-Device AI Campus Intelligence Platform
-
-[![AMD Slingshot 2025](https://img.shields.io/badge/AMD%20Slingshot-2025-ff0000?style=for-the-badge&logo=amd&logoColor=white)](https://www.amd.com)
-[![Track](https://img.shields.io/badge/Track-Open%20Innovation-6366f1?style=for-the-badge)](.)
+[![AMD ROCm](https://img.shields.io/badge/AMD%20ROCm-6.2-ff0000?style=for-the-badge&logo=amd&logoColor=white)](https://www.amd.com/rocm)
+[![LangGraph](https://img.shields.io/badge/Agentic-LangGraph-6366f1?style=for-the-badge)](https://langchain-ai.github.io/langgraph/)
 [![License](https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-3.10+-3b82f6?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![React](https://img.shields.io/badge/React-18+-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://react.dev)
+[![Global Competition](https://img.shields.io/badge/Status-Global%20Competitive-f59e0b?style=for-the-badge)](.)
 
-**The AI brain every Indian campus deserves — private, multilingual, and running entirely on AMD hardware.**
+**The "Bharat-First" intelligence platform for the global stage — sovereign, on-device, and running entirely on AMD hardware.**
 
-*No cloud. No API fees. No data leaving campus. Ever.*
+*Offline Intelligence. Zero Cloud Fees. Absolute Data Sovereignty.*
 
-[🧠 LEARN](#-learn--ai-tutor) · [⚙️ OPERATE](#️-operate--campus-os) · [🎨 CREATE](#-create--ai-app-builder) · [🚀 Quick Start](#-quick-start)
-
-</div>
+[🧠 LEARN 2.0](#-learn--indic-ai-tutor) · [⚙️ OPERATE 2.0](#️-operate--campus-os) · [🎨 CREATE 2.0](#-create--agentic-builder) · [🚀 Quick Start](#-quick-start)
 
 ---
 
-## 🎯 The Problem
+## 🎯 The Global-Bharat Vision
 
-4,000+ Indian colleges. 40 million students. Countless disconnected tools.
+VIDYA OS 2.0 is not just a hackathon project; it's a blueprint for **Sovereign Digital Infrastructure**. It solves the specific challenges of 40M+ Indian students while setting a global standard for decentralized AI.
 
-- Students waste hours on admin — forms, finding rooms, tracking schedules
-- Cloud AI = expensive API costs + data sovereignty risk + fails offline
-- Regional language learners are left behind by English-only tools
-- Non-CS students can't build or customise AI tools for their clubs and events
-- Campus data (energy, space, safety) is siloed and unactionable
-
-**VIDYA OS solves this with a single, on-campus AI platform.**
+- **Indic-Language RAG 2.0**: Native support for Hinglish, Tamil, and Bengali academic documents.
+- **Sovereign Compute**: Optimized for **AMD ROCm**, leveraging local SLMs (Phi-4/Gemma 2) for enterprise performance without cloud costs.
+- **Liquid Intelligence UI**: A premium, motion-first experience powered by **Framer Motion**.
+- **Agentic Orchestration**: Moving beyond chatbots to a multi-agent system using **LangGraph**.
 
 ---
 
-## ✨ Three Pillars
+## ✨ Intelligence Pillars 2.0
 
-### 🧠 LEARN — AI Tutor
-> Multilingual, on-device academic coaching for every student
+### 🧠 LEARN — Indic AI Tutor
+> Sovereign academic coaching with multi-dialect support.
 
-- **Streaming AI chat** powered by Llama 3.2 via Ollama
-- **Voice input** in English, Hindi, Tamil, and Bengali (Web Speech API)
-- **Instant quiz generation** from any topic discussed
-- **Step-by-step explanations** with source attribution
-- **Spaced repetition** — remembers what you struggled with
+- **On-Device SLM Inference**: Powered by Phi-4/Gemma 2 via optimized Transformers.
+- **Indic-Language RAG**: Query English textbooks using Hindi/Tamil voice commands.
+- **Concept Handover**: The LEARN agent can "hand over" tasks to the CREATE agent to build practice tools.
+- **Zero-Latency Streaming**: "Liquid" chat interface with real-time source attribution.
 
 ### ⚙️ OPERATE — Campus OS
-> Real-time intelligence across your entire campus
+> Real-time intelligence dashboard with Bento-Grid evolution.
 
-- **Live KPI dashboard**: footfall, energy (kWh), AQI, space utilisation
-- **WebSocket streaming** — data refreshes every 5 seconds
-- **AI-generated alerts**: anomaly detection with plain-language remediation guidance
-- **24-hour trend charts** for energy and footfall
-- **Building-by-building** occupancy heatmap
+- **Self-Organizing Bento Tiles**: Layout shifts priority based on AI anomaly detection.
+- **Edge Analytics**: Real-time footprints, energy, and space utilization processed locally.
+- **Neural Alerts**: Natural language remediation guidance for campus emergencies.
+- **Digital Twin Transitions**: Shared element transitions for building-level deep dives.
 
-### 🎨 CREATE — AI App Builder
-> Let any student build and deploy AI tools — zero code required
+### 🎨 CREATE — Agentic Builder
+> Let any student build and deploy agentic tools — zero code required.
 
-- **3 ready templates**: FAQ Chatbot, Event Assistant, Feedback Collector
-- **No-code form builder** — name it, configure it, publish it
-- **Live preview** before publishing
-- **Instant deploy** → shareable URL, live chat interface
-- **LLM-powered** — every published app uses your campus AI
+- **Multi-Agent Templates**: FAQ Agents, Campus Event Coordinators, Research Assistants.
+- **One-Click Local Deploy**: Instant deployment to the sovereign campus network.
+- **Sovereign Embedding Store**: Every apps leverages the campus's shared vector knowledge.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ Technical Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│              React PWA (Vite) · :5173                   │
-│  LandingPage │ LearnPage │ OperatePage │ CreatePage      │
-└──────────────────────────┬──────────────────────────────┘
-                           │ REST / WebSocket
-┌──────────────────────────▼──────────────────────────────┐
-│              FastAPI Backend · :8000                     │
-│  /api/learn/*  │  /api/operate/*  │  /api/create/*       │
-└──────────────────────────┬──────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────┐
-│         AMD Hardware Layer (On-Premise)                  │
-│  ┌─────────────────────────────────────────────────┐    │
-│  │  Ollama → Llama 3.2 + Whisper                   │    │
-│  │  AMD Radeon GPU (ROCm) / Ryzen AI NPU            │    │
-│  └─────────────────────────────────────────────────┘    │
-└─────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph "Frontend: Liquid UI (React + Framer Motion)"
+        A[Landing Page] --> B[Indic Tutor]
+        A --> C[Campus Bento OS]
+        A --> D[Agentic Builder]
+    end
+
+    subgraph "Backend: Agentic Engine (FastAPI + LangGraph)"
+        E[API Gateway] --> F[Coordinator Agent]
+        F --> G[RAG Agent - Qdrant]
+        F --> H[Tool Agent - SQL/Local]
+        F --> I[Inference Service - ROCm]
+    end
+
+    subgraph "Sovereign Layer (AMD Hardware)"
+        J[AMD Radeon/EPYC] --> K[ROCm Stack]
+        K --> L[Local SLM: Phi-4/Gemma 2]
+    end
+
+    B <--> E
+    C <--> E
+    D <--> E
 ```
 
-**Tech Stack:**
+**Global-Standard Tech Stack:**
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | React 18, Vite, Recharts, React Router, Lucide |
-| Backend | Python 3.10+, FastAPI, Uvicorn, WebSockets |
-| AI Inference | Ollama (Llama 3.2), AMD ROCm / CUDA |
-| Styling | Vanilla CSS, Space Grotesk + Inter fonts |
+| **Core UI** | React 19, Framer Motion, Lucide, Tailwind |
+| **Orchestration** | LangGraph, LangChain, Pydantic AI |
+| **Inference** | Transformers (ROCm Optimized), vLLM-lite |
+| **Vector DB** | Qdrant (Persistent Collections) |
+| **Hardare Accel** | AMD ROCm 6.2, Ryzen AI, EPYC |
 
 ---
 
