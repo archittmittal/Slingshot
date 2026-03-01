@@ -7,12 +7,14 @@ import OperatePage from './pages/OperatePage'
 import CreatePage from './pages/CreatePage'
 import LandingPage from './pages/LandingPage'
 import PageTransition from './components/PageTransition'
+import MemePage from './pages/MemePage'
 import './App.css'
 
 const navItems = [
   { to: '/learn', icon: Brain, label: 'LEARN', sub: 'AI Tutor', color: 'var(--primary)' },
   { to: '/operate', icon: LayoutDashboard, label: 'OPERATE', sub: 'Campus OS', color: 'var(--secondary)' },
   { to: '/create', icon: Wand2, label: 'CREATE', sub: 'App Builder', color: 'var(--accent)' },
+  { to: '/memes', icon: Laugh, label: 'MEMES', sub: 'Humor Engine', color: '#ec4899' },
 ]
 
 function Sidebar({ open, setOpen }) {
@@ -105,6 +107,7 @@ function AnimatedRoutes() {
         <Route path="/learn" element={<PageTransition><LearnPage /></PageTransition>} />
         <Route path="/operate" element={<PageTransition><OperatePage /></PageTransition>} />
         <Route path="/create" element={<PageTransition><CreatePage /></PageTransition>} />
+        <Route path="/memes" element={<PageTransition><MemePage /></PageTransition>} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AnimatePresence>
