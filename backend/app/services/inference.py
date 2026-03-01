@@ -31,10 +31,10 @@ class InferenceService:
 
     def __init__(self):
         self.model_url = (
-            f"https://api-inference.huggingface.co/models/{settings.HF_MODEL_ID}"
+            f"https://router.huggingface.co/models/{settings.HF_MODEL_ID}"
         )
         self.chat_url = (
-            f"https://api-inference.huggingface.co/v1/chat/completions"
+            f"https://router.huggingface.co/v1/chat/completions"
         )
         self.headers = {
             "Authorization": f"Bearer {settings.HF_API_TOKEN}",

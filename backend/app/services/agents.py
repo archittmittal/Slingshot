@@ -19,7 +19,7 @@ def get_model():
     return ChatOpenAI(
         model=settings.HF_MODEL_ID,
         api_key=settings.HF_API_TOKEN,
-        base_url="https://api-inference.huggingface.co/v1",
+        base_url="https://router.huggingface.co/v1",
         streaming=True,
     )
 
