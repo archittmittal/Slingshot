@@ -7,7 +7,7 @@ from sentence_transformers import SentenceTransformer
 # Load config or set manually
 QDRANT_URL = "https://your-qdrant-cluster-url"
 QDRANT_API_KEY = "your-api-key"
-COLLECTION_NAME = "campus_knowledge"
+COLLECTION_NAME = "vidya_sovereign"
 
 def ingest_text(text: str, metadata: dict = None):
     print(f"Initializing SentenceTransformer...")
