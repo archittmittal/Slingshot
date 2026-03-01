@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, NavLink, Navigate, useLocation } from 'react-router-dom'
-import { Brain, LayoutDashboard, Wand2, Cpu, Zap, Menu, X, Rocket } from 'lucide-react'
+import { Brain, LayoutDashboard, Wand2, Cpu, Zap, Menu, X, Rocket, Laugh } from 'lucide-react'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import LearnPage from './pages/LearnPage'
