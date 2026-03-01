@@ -23,3 +23,7 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+# Support standard HF_TOKEN secret if HF_API_TOKEN is not set
+if not settings.HF_API_TOKEN:
+    settings.HF_API_TOKEN = os.getenv("HF_TOKEN", "")
