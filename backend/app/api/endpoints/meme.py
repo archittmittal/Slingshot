@@ -7,14 +7,14 @@ from app.services.inference import inference_service
 router = APIRouter()
 
 CAMPUS_SITUATIONS = [
+    "Jamia fake circular saying couples will be married off",
+    "Galgotias University viral interview 'Innovation' defense",
+    "Boards 2026 panic and last-minute motivation",
     "When the library is full during finals week",
     "Trying to find a charging port in the lecture hall",
     "Eating at the mess after a 3-hour lab",
-    "When the professor says 'Last 5 minutes' and you haven't started Q1",
-    "Running to class at 8:59 AM",
     "When the WiFi works for exactly 2 seconds",
-    "Senior giving 'advice' that sounds like a side quest",
-    "The 1% battery struggle during a presentation"
+    "Senior giving 'advice' that sounds like a side quest"
 ]
 
 class MemeGenerateRequest(BaseModel):
